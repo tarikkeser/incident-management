@@ -1,8 +1,11 @@
+using IncidentManagement.Domain.Common;
 using IncidentManagement.Domain.Enums;
+using IncidentManagement.Domain.Events;
+
 
 namespace IncidentManagement.Domain.Entities;
 
-public class Incident
+public class Incident:AggregateRoot
 {
     private const int MaxTitleLength = 100;
     private const int MaxDescriptionLength = 2000;
@@ -91,7 +94,7 @@ public class Incident
         };
     }
 
-    public bool StartProgress()
+    public bool StartProgress(DateTimeOffset startedAt)
     {
         if (this.Status != IncidentStatus.Open)
         {
@@ -99,6 +102,7 @@ public class Incident
         }
 
         Status = IncidentStatus.InProgress;
+        Raise(new IncidentProgressStarted(this, startedAt));
         return true;
     }
 
@@ -116,6 +120,7 @@ public class Incident
 
         this.Status = IncidentStatus.Resolved;
         this.ResolvedAt = resolvedAt;
+        Raise(new IncidentResolved(this, resolvedAt));
         return true;
     }
 
