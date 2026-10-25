@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/IncidentManagement.Api/IncidentManagement.Api.csproj" />
+    <Project Path="src/IncidentManagement.Application/IncidentManagement.Application.csproj" />
+    <Project Path="src/IncidentManagement.Domain/IncidentManagement.Domain.csproj" />
+    <Project Path="src/IncidentManagement.Functions/IncidentManagement.Functions.csproj" />
+    <Project Path="src/IncidentManagement.Infrastructure/IncidentManagement.Infrastructure.csproj" />
+  </Folder>
+</Solution>
