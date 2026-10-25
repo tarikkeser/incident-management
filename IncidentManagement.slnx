@@ -6,4 +6,7 @@
     <Project Path="src/IncidentManagement.Functions/IncidentManagement.Functions.csproj" />
     <Project Path="src/IncidentManagement.Infrastructure/IncidentManagement.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/IncidentManagement.Domain.Tests/IncidentManagement.Domain.Tests.csproj" />
+  </Folder>
 </Solution>
